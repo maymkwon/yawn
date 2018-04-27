@@ -128,3 +128,5 @@ src
 - [ ] 폴더구조 정의
 - [ ] 라우팅
 - [ ] on and on.. (redux, saga, 등등 기본 액션 생성)
+
+![yawn~](http://animal.memozee.com/ArchHAN02/1150869870-m.jpg)
