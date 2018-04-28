@@ -11,7 +11,7 @@ class ButtonContainer extends Component {
           <FloatButton.Float icxStyle="primary">
             <div>
               <div className="inner">
-                <span>aaaa</span>
+                <span>버튼</span>
               </div>
             </div>
           </FloatButton.Float>

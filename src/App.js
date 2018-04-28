@@ -3,7 +3,9 @@ import { injectGlobal } from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from './components/exampleAction/testAction';
 import LoginForm from './components/forms/LoginForm';
+import ButtonContainer from './components/buttons/ButtonContainer';
 import { Heading } from './style/components';
+import Button from './style/components/buttons/Button'
 import {
   fontSize,
   lineHeight,
@@ -17,32 +19,40 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div className="App">
-        <LoginForm onSubmitFunc={this.handleLogin} />
-        <div>
-          <Heading>Heading</Heading>
-        </div>
-        <Heading>Heading2</Heading>
-        <a href="">aaa</a>
-        <table>
-          <thead>
-            <tr>
-              <th>aaaaa</th>
-              <th>aaaaa1</th>
-              <th>aaaaa2</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>aaaaa</td>
-              <td>aaaaa1</td>
-              <td>aaaaa2</td>
-            </tr>
-          </tbody>
-        </table>
+    return <div className="App">
+      <LoginForm onSubmitFunc={this.handleLogin} />
+      <div>
+        <Heading>Heading</Heading>
       </div>
-    );
+      <Heading>Heading2</Heading>
+      <a href="">aaa</a>
+      <table>
+        <thead>
+          <tr>
+            <th>aaaaa</th>
+            <th>aaaaa1</th>
+            <th>aaaaa2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>aaaaa</td>
+            <td>aaaaa1</td>
+            <td>aaaaa2</td>
+          </tr>
+        </tbody>
+      </table>
+      <Button.FloatWrap>
+        <Button.Float icxStyle="secondary">
+          <div>
+            <div className="inner">
+              aaa
+            </div>
+          </div>
+        </Button.Float>
+      </Button.FloatWrap>
+      <ButtonContainer />
+    </div>;
   }
 }
 
