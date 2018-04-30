@@ -11,6 +11,7 @@ const InputWrap = styled.div`
   font-family: Roboto, sans-serif;
   transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   cursor: auto;
+  margin-bottom: 40px;
 `;
 const Input = styled.input`
   padding: 0px;
@@ -61,7 +62,6 @@ const Notice = styled.div`
   ${props => props.warning && 'color: orange'};
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 `;
-
 
 export const Hr = styled.hr`
   border-top: none rgb(224, 224, 224);

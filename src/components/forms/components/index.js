@@ -1,2 +1,4 @@
 import InputText from './InputText';
-export { InputText };
+import InputRadio from './InputRadio';
+import InputCheckbox from './InputCheck';
+export { InputText, InputRadio, InputCheckbox };

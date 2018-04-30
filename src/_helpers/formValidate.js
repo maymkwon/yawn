@@ -8,6 +8,9 @@ export const validate = values => {
   if (!values.password) {
     errors.password = '비밀번호를 입력해 주세요';
   }
+  if (!values.rrr) {
+    errors.rrr = '라디오 선택 주세요';
+  }
   return errors;
 };
 

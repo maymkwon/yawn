@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Hr, Hr2} from '../../../style/components'
+import { Input, Hr, Hr2 } from '../../../style/components';
 
 const InputText = field => {
   console.log(field);
