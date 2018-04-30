@@ -31,28 +31,13 @@ class LoginForm extends Component {
           <Field name="password" component={InputText} label="패스워드" />
           <InputRadio
             name="rrr"
+            align="inline-block"
             options={{
               mild: 'Mild',
               medium: 'Medium',
               hot: 'hot'
             }}
           />
-          {/* <Field
-            name="spiceLevel"
-            label="Spice Level"
-            component={InputRadio}
-            options={{
-              mild: 'Mild',
-              medium: 'Medium',
-              hot: 'hot'
-            }}
-          /> */}
-
-          <label>
-            <Field name="sex" component="input" type="radio" value="female" />
-            Female
-          </label>
-
           <Button.Flat type="submit" icxStyle="primary">
             Sign Up
           </Button.Flat>

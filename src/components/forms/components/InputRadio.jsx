@@ -1,21 +1,16 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { Input, Hr, Hr2 } from '../../../style/components';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Radio } from '../../../style/components';
 
-const RadioNotice = styled(Input.Notice)`
-  position: relative;
-  bottom: 0;
-`;
-const Radio = props => {
+const renderRadio = props => {
   if (props && props.input && props.options) {
     const renderRadioButtons = (key, index) => {
       return (
-        <label
-          className="sans-serif w-100"
+        <Radio
           key={`${index}`}
           htmlFor={`${props.input.name}-${index}`}
+          align={props.align}
         >
           <Field
             id={`${props.input.name}-${index}`}
@@ -25,8 +20,9 @@ const Radio = props => {
             value={key}
             className="mh2"
           />
-          {props.options[key]}
-        </label>
+          <span>{props.options[key]}</span>
+          <Radio.Checkmark className="checkmark" />
+        </Radio>
       );
     };
     return (
@@ -37,10 +33,10 @@ const Radio = props => {
         </div>
         {(props.meta.touched &&
           (props.meta.error && (
-            <RadioNotice error>{props.meta.error}</RadioNotice>
+            <Radio.Notice error>{props.meta.error}</Radio.Notice>
           ))) ||
           (props.meta.warning && (
-            <RadioNotice warning>{props.meta.warning}</RadioNotice>
+            <Radio.Notice warning>{props.meta.warning}</Radio.Notice>
           ))}
       </div>
     );
@@ -48,19 +44,25 @@ const Radio = props => {
   return <div>set props "option" or "input"</div>;
 };
 
-const InputRadio = ({ options, name }) => {
+const InputRadio = ({ options, name, align }) => {
   return (
     <Field
       name={name}
       label="Spice Level"
-      component={Radio}
+      component={renderRadio}
       options={options}
+      align={align}
     />
   );
 };
 
 InputRadio.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  align: PropTypes.oneOf(['block', 'inline-block'])
+};
+
+InputRadio.defaultProps = {
+  align: 'block'
 };
 
 export default InputRadio;
