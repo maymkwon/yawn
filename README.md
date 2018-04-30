@@ -138,4 +138,4 @@
 - [ ] 라우팅
 - [ ] on and on.. (redux, saga, 등등 기본 액션 생성)
 
-![yarn](https://cdn.pixabay.com/photo/2016/08/11/07/41/cat-1584966_960_720.jpg)
+![yarn](http://animal.memozee.com/ArchHAN02/1150869870-m.jpg)
