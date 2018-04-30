@@ -1,2 +1,3 @@
 import InputText from './InputText';
-export { InputText };
+import InputRadio from './InputRadio';
+export { InputText, InputRadio };
