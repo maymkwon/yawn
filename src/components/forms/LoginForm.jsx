@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { InputText, InputRadio } from './components';
+import { InputText, InputRadio, InputCheckbox } from './components';
 import { validate, warn } from '../../_helpers';
 import { Button } from '../../style/components';
 
@@ -31,6 +31,15 @@ class LoginForm extends Component {
           <Field name="password" component={InputText} label="패스워드" />
           <InputRadio
             name="rrr"
+            align="inline-block"
+            options={{
+              mild: 'Mild',
+              medium: 'Medium',
+              hot: 'hot'
+            }}
+          />
+          <InputCheckbox
+            name="ccc"
             align="inline-block"
             options={{
               mild: 'Mild',
