@@ -3,6 +3,7 @@ import { injectGlobal } from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from './components/exampleAction/testAction';
 import LoginForm from './components/forms/LoginForm';
+import ButtonContainer from './components/buttons/ButtonContainer';
 import { Heading } from './style/components';
 import {
   fontSize,
@@ -22,8 +23,8 @@ class App extends Component {
         <LoginForm onSubmitFunc={this.handleLogin} />
         <div>
           <Heading>Heading</Heading>
+          <Heading>Heading2</Heading>
         </div>
-        <Heading>Heading2</Heading>
         <a href="">aaa</a>
         <table>
           <thead>
@@ -41,6 +42,7 @@ class App extends Component {
             </tr>
           </tbody>
         </table>
+        <ButtonContainer />
       </div>
     );
   }

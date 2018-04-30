@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 //attr속성을 추가 컨트롤 할 수 있다.
 const Header = styled.header.attrs({
   className: 'p2 bold white bg-blue'
-}) `
-  ${ props => props.shadow && 'box-shadow: 0 2px 2px 0 #aaa;'}
-`
+})`
+  ${props => props.shadow && 'box-shadow: 0 2px 2px 0 #aaa;'};
+`;
 
 class AttrHeader extends Component {
   render() {
