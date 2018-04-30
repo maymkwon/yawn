@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { InputText } from './components';
-import { validate, warn } from '../../_helpers';
+import { loginFormErrorValidate, loginFormWarningValidate } from '../../_helpers';
 import { Button } from '../../style/components';
 
 import PropTypes from 'prop-types';
@@ -21,7 +21,7 @@ class LoginForm extends Component {
   }
 }
 
-const createLoginForm = reduxForm({ form: 'login', validate, warn });
+const createLoginForm = reduxForm({ form: 'login', validate:loginFormErrorValidate, warn:loginFormWarningValidate });
 LoginForm = createLoginForm(LoginForm);
 
 LoginForm.propTypes = {
