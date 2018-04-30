@@ -5,6 +5,7 @@ import * as actions from './components/exampleAction/testAction';
 import LoginForm from './components/forms/LoginForm';
 import ButtonContainer from './components/buttons/ButtonContainer';
 import { Heading } from './style/components';
+import Button from './style/components/buttons/Button';
 import {
   fontSize,
   lineHeight,
@@ -23,8 +24,8 @@ class App extends Component {
         <LoginForm onSubmitFunc={this.handleLogin} />
         <div>
           <Heading>Heading</Heading>
-          <Heading>Heading2</Heading>
         </div>
+        <Heading>Heading2</Heading>
         <a href="">aaa</a>
         <table>
           <thead>
@@ -42,6 +43,13 @@ class App extends Component {
             </tr>
           </tbody>
         </table>
+        <Button.FloatWrap>
+          <Button.Float icxStyle="secondary">
+            <div>
+              <div className="inner">aaa</div>
+            </div>
+          </Button.Float>
+        </Button.FloatWrap>
         <ButtonContainer />
       </div>
     );
