@@ -6,6 +6,7 @@ import LoginForm from './components/forms/LoginForm';
 import ButtonContainer from './components/buttons/ButtonContainer';
 import { Heading } from './style/components';
 import Button from './style/components/buttons/Button';
+import ScrollHeader from './scroll/ScrollHeader';
 import {
   fontSize,
   lineHeight,
@@ -14,43 +15,57 @@ import {
   spacing
 } from './style/config';
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navbarHeight: 0
+    };
+  }
   handleLogin = value => {
     console.log('들어왔니?', value);
   };
 
+  componentDidMount() {
+    const navbarHeight = document.getElementById('header').offsetHeight;
+    this.setState({ navbarHeight });
+  }
+
   render() {
     return (
-      <div className="App">
-        <LoginForm onSubmitFunc={this.handleLogin} />
-        <div>
-          <Heading>Heading</Heading>
+      <div className="App" style={{ height: 2000 }}>
+        <ScrollHeader navbarHeight={this.state.navbarHeight} />
+        <div style={{ paddingTop: 100 }}>
+          <LoginForm onSubmitFunc={this.handleLogin} />
+          <div>
+            <Heading>Heading</Heading>
+          </div>
+          <Heading>Heading2</Heading>
+          <a href="">aaa</a>
+          <table>
+            <thead>
+              <tr>
+                <th>aaaaa</th>
+                <th>aaaaa1</th>
+                <th>aaaaa2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>aaaaa</td>
+                <td>aaaaa1</td>
+                <td>aaaaa2</td>
+              </tr>
+            </tbody>
+          </table>
+          <Button.FloatWrap>
+            <Button.Float icxStyle="secondary">
+              <div>
+                <div className="inner">aaa</div>
+              </div>
+            </Button.Float>
+          </Button.FloatWrap>
+          <ButtonContainer />
         </div>
-        <Heading>Heading2</Heading>
-        <a href="">aaa</a>
-        <table>
-          <thead>
-            <tr>
-              <th>aaaaa</th>
-              <th>aaaaa1</th>
-              <th>aaaaa2</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>aaaaa</td>
-              <td>aaaaa1</td>
-              <td>aaaaa2</td>
-            </tr>
-          </tbody>
-        </table>
-        <Button.FloatWrap>
-          <Button.Float icxStyle="secondary">
-            <div>
-              <div className="inner">aaa</div>
-            </div>
-          </Button.Float>
-        </Button.FloatWrap>
-        <ButtonContainer />
       </div>
     );
   }

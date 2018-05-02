@@ -5,26 +5,14 @@ import { Checkbox } from '../../../style/components';
 
 const renderCheckbox = props => {
   return (
-    <div className="mv3 w-100">
-      <div className="b sans-serif pv2 w-100">{props.label}</div>
-      <div>
-        <div className="flex items-center mv4 w-100">
-          <input
-            {...props.input}
-            className="mr2"
-            type="checkbox"
-            checked={props.input.value}
-          />
-          <div className="sans-serif">{props.label}</div>
-        </div>
-      </div>
-      {(props.meta.touched &&
-        (props.meta.error && (
-          <Checkbox.Notice error>{props.meta.error}</Checkbox.Notice>
-        ))) ||
-        (props.meta.warning && (
-          <Checkbox.Notice warning>{props.meta.warning}</Checkbox.Notice>
-        ))}
+    <div className="flex items-center mv4 w-100">
+      <input
+        {...props.input}
+        className="mr2"
+        type="checkbox"
+        checked={props.input.value}
+      />
+      <div className="sans-serif">{props.label}</div>
     </div>
   );
 };
@@ -61,12 +49,13 @@ const renderCheckbox = props => {
 //   </FormGroup>
 // );
 
-const InputCheckbox = () => {
+const InputCheckbox = ({ align }) => {
   return (
     <Field
       name="wantsFries"
       label="Would you like fries with that?"
       component={renderCheckbox}
+      align={align}
     />
   );
 };

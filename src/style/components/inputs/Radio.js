@@ -27,9 +27,14 @@ export const LabelContainer = styled.label`
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
+  margin-left: 15px;
   cursor: pointer;
   font-size: 22px;
   user-select: none;
+
+  &:first-child {
+    margin-left:0;
+  }
 
   &:hover input ~ .checkmark {
     background-color: #ccc;

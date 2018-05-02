@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { loginFormErrorValidate, loginFormWarningValidate } from '../../_helpers';
+import {
+  loginFormErrorValidate,
+  loginFormWarningValidate
+} from '../../_helpers';
 import { InputText, InputRadio, InputCheckbox } from './components';
 import { Button } from '../../style/components';
 
@@ -32,31 +35,44 @@ class LoginForm extends Component {
           <InputRadio
             name="rrr"
             align="inline-block"
+            // options={[
+            //   { value: 'Mildvalue', name: 'mildName' },
+            //   { value: 'Medium', name: 'medname' },
+            //   { value: 'hot', name: 'hotname' }
+            // ]}
             options={{
-              mild: 'Mild',
-              medium: 'Medium',
+              Mildvalue: 'Mildvalue',
+              Medium: 'Medium',
               hot: 'hot'
             }}
           />
-          <InputCheckbox
-            name="ccc"
-            align="inline-block"
-            options={{
-              mild: 'Mild',
-              medium: 'Medium',
-              hot: 'hot'
-            }}
-          />
+          <InputCheckbox name="ccc" align="inline-block" />
           <Button.Flat type="submit" icxStyle="primary">
             Sign Up
           </Button.Flat>
+          <label>
+            <Field name="sex" component="input" type="radio" value="male" />{' '}
+            <div style={{ background: 'red', padding: 10 }}>aaa</div>
+          </label>
+          <label>
+            <Field name="sex" component="input" type="radio" value="male1" />{' '}
+            Male
+          </label>
+          <label>
+            <Field name="sex" component="input" type="radio" value="male2" />{' '}
+            Male
+          </label>
         </form>
       </div>
     );
   }
 }
 
-const createLoginForm = reduxForm({ form: 'login', validate:loginFormErrorValidate, warn:loginFormWarningValidate });
+const createLoginForm = reduxForm({
+  form: 'login',
+  validate: loginFormErrorValidate,
+  warn: loginFormWarningValidate
+});
 LoginForm = createLoginForm(LoginForm);
 
 LoginForm.propTypes = {

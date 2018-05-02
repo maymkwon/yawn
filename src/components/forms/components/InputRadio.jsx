@@ -5,7 +5,27 @@ import { Radio } from '../../../style/components';
 
 const renderRadio = props => {
   if (props && props.input && props.options) {
-    const renderRadioButtons = (key, index) => {
+    const renderRadioButtonsForOptionsArr = (key, index) => {
+      return (
+        <Radio
+          key={`${index}`}
+          htmlFor={`${props.input.name}-${index}`}
+          align={props.align}
+        >
+          <Field
+            id={`${props.input.name}-${index}`}
+            component="input"
+            name={props.input.name}
+            type="radio"
+            value={key.value}
+            className="mh2"
+          />
+          <span>{props.options[index].value}</span>
+          <Radio.Checkmark className="checkmark" />
+        </Radio>
+      );
+    };
+    const renderRadioButtonsForOptionsObj = (key, index) => {
       return (
         <Radio
           key={`${index}`}
@@ -29,7 +49,9 @@ const renderRadio = props => {
       <div className="mv3 w-100">
         <div className="b sans-serif pv2 w-100">{props.label}</div>
         <div>
-          {props.options && Object.keys(props.options).map(renderRadioButtons)}
+          {props.options && Array.isArray(props.options)
+            ? props.options.map(renderRadioButtonsForOptionsArr)
+            : Object.keys(props.options).map(renderRadioButtonsForOptionsObj)}
         </div>
         {(props.meta.touched &&
           (props.meta.error && (
@@ -58,6 +80,10 @@ const InputRadio = ({ options, name, align }) => {
 
 InputRadio.propTypes = {
   name: PropTypes.string.isRequired,
+  options: PropTypes.oneOfType([
+    PropTypes.object.isRequired,
+    PropTypes.array.isRequired
+  ]),
   align: PropTypes.oneOf(['block', 'inline-block'])
 };
 
