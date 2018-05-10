@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { fontSize, fontWeight, lineHeight } from '../config';
 // TODO breakpoint 공통
+// a태그
 
 export const Heading = styled.h1`
   margin-bottom: 0;

@@ -27,11 +27,13 @@ class ScrollHeader extends Component {
       navClass: 'up'
     });
   };
+
   showHeader = () => {
     this.setState({
       navClass: 'down'
     });
   };
+
   getDocHeight = () => {
     return Math.max(
       document.body.scrollHeight,
