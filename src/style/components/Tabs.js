@@ -68,7 +68,8 @@ class Tabs extends Component {
         <Content>
           {React.Children.map(
             children,
-            (comp, index) => (selectedTab === index ? comp : undefined)
+            (components, index) =>
+              selectedTab === index ? components : undefined
           )}
         </Content>
       </TabWrapper>
